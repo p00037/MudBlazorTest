@@ -10,22 +10,22 @@
 @inject NavigationManager NavigationManager
 @inject IdentityRedirectManager RedirectManager
 
-<PageTitle>Register confirmation</PageTitle>
+<PageTitle>登録確認</PageTitle>
 
-<h1>Register confirmation</h1>
+<h1>登録確認</h1>
 
 <StatusMessage Message="@statusMessage" />
 
 @if (emailConfirmationLink is not null)
 {
     <p>
-        This app does not currently have a real email sender registered, see <a class="mud-link mud-primary-text mud-link-underline-hover" href="https://aka.ms/aspaccountconf">these docs</a> for how to configure a real email sender.
-        Normally this would be emailed: <a class="mud-link mud-primary-text mud-link-underline-hover" href="@emailConfirmationLink">Click here to confirm your account</a>
+        このアプリでは実際のメール送信設定がされていません。実メール送信の設定方法は<a class="mud-link mud-primary-text mud-link-underline-hover" href="https://aka.ms/aspaccountconf">こちらのドキュメント</a>を参照してください。
+        通常は次のリンクがメールで送信されます: <a class="mud-link mud-primary-text mud-link-underline-hover" href="@emailConfirmationLink">アカウントを確認する</a>
     </p>
 }
 else
 {
-    <p role="alert">Please check your email to confirm your account.</p>
+    <p role="alert">アカウント確認のためメールを確認してください。</p>
 }
 
 @code {
@@ -52,7 +52,7 @@ else
         if (user is null)
         {
             HttpContext.Response.StatusCode = StatusCodes.Status404NotFound;
-            statusMessage = "Error finding user for unspecified email";
+            statusMessage = "指定されたメールアドレスのユーザーが見つかりません。";
         }
         else if (EmailSender is IdentityNoOpEmailSender)
         {

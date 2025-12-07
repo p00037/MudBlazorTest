@@ -198,8 +198,9 @@
 
     private sealed class InputModel
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "この項目は必須です。")]
+        [EmailAddress(ErrorMessage = "有効なメールアドレス形式で入力してください。")]
+        [Display(Name = "メールアドレス")]
         public string Email { get; set; } = "";
     }
 }
