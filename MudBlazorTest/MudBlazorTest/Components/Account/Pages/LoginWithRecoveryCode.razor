@@ -71,15 +71,15 @@
         else
         {
             Logger.LogWarning("Invalid recovery code entered for user with ID '{UserId}' ", userId);
-            message = "Error: Invalid recovery code entered.";
+            message = "エラー: リカバリーコードが正しくありません。";
         }
     }
 
     private sealed class InputModel
     {
-        [Required]
+        [Required(ErrorMessage = "この項目は必須です。")]
         [DataType(DataType.Text)]
-        [Display(Name = "Recovery Code")]
+        [Display(Name = "リカバリーコード")]
         public string RecoveryCode { get; set; } = "";
     }
 }

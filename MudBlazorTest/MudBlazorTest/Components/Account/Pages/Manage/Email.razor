@@ -90,7 +90,7 @@
 
         await EmailSender.SendConfirmationLinkAsync(user, Input.NewEmail, HtmlEncoder.Default.Encode(callbackUrl));
 
-        message = "Confirmation link to change email sent. Please check your email.";
+        message = "メールアドレス変更用の確認リンクを送信しました。メールをご確認ください。";
     }
 
     private async Task OnSendEmailVerificationAsync()
@@ -109,14 +109,14 @@
 
         await EmailSender.SendConfirmationLinkAsync(user, email, HtmlEncoder.Default.Encode(callbackUrl));
 
-        message = "Verification email sent. Please check your email.";
+        message = "確認メールを送信しました。メールをご確認ください。";
     }
 
     private sealed class InputModel
     {
-        [Required]
-        [EmailAddress]
-        [Display(Name = "New email")]
+        [Required(ErrorMessage = "この項目は必須です。")]
+        [EmailAddress(ErrorMessage = "有効なメールアドレス形式で入力してください。")]
+        [Display(Name = "新しいメールアドレス")]
         public string? NewEmail { get; set; }
     }
 }

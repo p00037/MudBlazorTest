@@ -169,10 +169,10 @@ else
 
     private sealed class InputModel
     {
-        [Required]
-        [StringLength(7, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessage = "この項目は必須です。")]
+        [StringLength(7, ErrorMessage = "{0}は{2}文字以上{1}文字以下で入力してください。", MinimumLength = 6)]
         [DataType(DataType.Text)]
-        [Display(Name = "Verification Code")]
+        [Display(Name = "確認コード")]
         public string Code { get; set; } = "";
     }
 }

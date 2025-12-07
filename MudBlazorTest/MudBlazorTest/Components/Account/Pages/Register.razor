@@ -127,12 +127,12 @@
 
     private sealed class InputModel
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "この項目は必須です。")]
+        [EmailAddress(ErrorMessage = "有効なメールアドレス形式で入力してください。")]
         [Display(Name = "メールアドレス")]
         public string Email { get; set; } = "";
 
-        [Required]
+        [Required(ErrorMessage = "この項目は必須です。")]
         [StringLength(100, ErrorMessage = "{0}は{2}文字以上{1}文字以下で入力してください。", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "パスワード")]
