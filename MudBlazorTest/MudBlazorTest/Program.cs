@@ -5,6 +5,7 @@ using MudBlazorTest.Client.Pages;
 using MudBlazorTest.Components;
 using MudBlazorTest.Components.Account;
 using MudBlazorTest.Data;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
