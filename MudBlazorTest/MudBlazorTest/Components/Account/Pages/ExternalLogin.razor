@@ -118,7 +118,7 @@
             if (user is null || !await UserManager.IsInRoleAsync(user, ApplicationRoles.User))
             {
                 await SignInManager.SignOutAsync();
-                RedirectManager.RedirectToWithStatus("Account/Login", "ユーザーロールのアカウントでのみログインできます。", HttpContext);
+                RedirectManager.RedirectToWithStatus("Account/Login", "エラー: ログインに失敗しました。", HttpContext);
             }
 
             Logger.LogInformation(
