@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="MudBlazorTest/MudBlazorTest.Client/MudBlazorTest.Client.csproj" />
-  <Project Path="MudBlazorTest/MudBlazorTest/MudBlazorTest.csproj" />
-</Solution>
